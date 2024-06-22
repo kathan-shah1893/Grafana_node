@@ -1,0 +1,9 @@
+version: "3" # Docker Compose file format version
+
+services:
+  prom-server: # Service name
+    image: prom/prometheus # Prometheus Docker image
+    ports:
+      - 9090:9090 # Map port 9090 on the host to port 9090 on the container
+    volumes:
+      - ./prometheus-config.yml:/etc/prometheus/prometheus.yml # Mount the Prometheus config file
